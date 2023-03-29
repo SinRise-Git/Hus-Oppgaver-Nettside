@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" type="image/png" href="/images/enter.png">
+    <script src="/javascript/login.js"></script>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+          <div class="form-value"> 
+            <form id="login-form">
+                <h2>Login</h2>
+                <div class="inputbox"> 
+                  <ion-icon name="person-outline"></ion-icon>
+                  <input type="text" id="username-login" required>
+                  <label for="">Brukernavn</label>
+                </div>
+                <div class="inputbox">  
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password-login" required>
+                    <label for="">Passord</label>
+                </div>
+                <button>Log in</button>
+                <div class="registrer">
+                    <p>Har du ikke en bruker <a href="#" onclick="showSignupForm()">Registrer</a> </p>
+                </div>
+            </form>
+            <form id="signup-form" style="display:none;">
+                <title>Signup</title>
+                <h2>Signup</h2>
+                <div class="inputbox"> 
+                  <ion-icon name="person-outline"></ion-icon>
+                  <input type="text" id="username-signup" required>
+                  <label for="">Brukernavn</label>
+                </div>
+                <div class="inputbox">  
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password-signup" required>
+                    <label for="">Passord</label>
+                </div>
+                <div class="select">
+                    <label for="rank">Familie Rank</label>
+                    <select name="rank" id="ranks">
+                       <option value="Barn">Barn</option>
+                       <option value="Voksen">Voksen</option>
+                    </select>
+                </div>
+                <button id="signup">Singup</button>
+                <div class="registrer">
+                    <p>Har du allerede en bruker<a href="#" onclick="showLoginForm()"> Login</a> </p>
+                </div>
+              </form>
+          </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
