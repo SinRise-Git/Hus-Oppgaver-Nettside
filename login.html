@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/login-page.css">
     <link rel="icon" type="image/png" href="/images/enter.png">
-    <script src="/javascript/login.js"></script>
+    <script src="/javascript/login-page-change.js"></script>
 </head>
 <body>
     <section>
@@ -16,9 +16,9 @@
             <form id="login-form">
                 <h2>Login</h2>
                 <div class="inputbox"> 
-                  <ion-icon name="person-outline"></ion-icon>
+                  <ion-icon name="mail-outline"></ion-icon>
                   <input type="text" id="username-login" required>
-                  <label for="">Brukernavn</label>
+                  <label for="">Gmail</label>
                 </div>
                 <div class="inputbox">  
                     <ion-icon name="lock-closed-outline"></ion-icon>
@@ -30,14 +30,20 @@
                     <p>Har du ikke en bruker <a href="#" onclick="showSignupForm()">Registrer</a> </p>
                 </div>
             </form>
+        
             <form id="signup-form" style="display:none;">
                 <title>Signup</title>
                 <h2>Signup</h2>
                 <div class="inputbox"> 
                   <ion-icon name="person-outline"></ion-icon>
-                  <input type="text" id="username-signup" required>
+                  <input type="text" name="username" id="username-signup" required>
                   <label for="">Brukernavn</label>
                 </div>
+                <div class="inputbox"> 
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" name="Gmail" id="gmail-signup" required>
+                    <label for="">Gmail</label>
+                  </div>
                 <div class="inputbox">  
                     <ion-icon name="lock-closed-outline"></ion-icon>
                     <input type="password" id="password-signup" required>
@@ -50,9 +56,10 @@
                        <option value="Voksen">Voksen</option>
                     </select>
                 </div>
-                <button id="signup">Singup</button>
+                <button type="button" id="submitData">Signup</button>
                 <div class="registrer">
                     <p>Har du allerede en bruker<a href="#" onclick="showLoginForm()"> Login</a> </p>
+                    <p class="error" id="error-message"></p> 
                 </div>
               </form>
           </div>
@@ -60,5 +67,5 @@
     </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
+    <script type="module" src="/javascript/firebase-signup.js"></script>
 </html>

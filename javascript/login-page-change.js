@@ -18,6 +18,4 @@ function showSignupForm(){
 
      // Change the href attribute to the new image path
      linkElement.href = '/images/add-user.png';
-    
-     
 }

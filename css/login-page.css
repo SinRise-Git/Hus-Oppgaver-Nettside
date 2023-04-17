@@ -133,5 +133,29 @@ button{
 .select select option {
     background-color: white;
     color: black;
-  }
+}
   
+.error {
+    text-align: center;
+    color: red;
+    font-size: 11px;
+    word-wrap: break-word;
+    display: block;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: none;
+    -webkit-text-fill-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+    background-color: transparent !important;
+    
+}
+
+.inputbox input {
+    color: white;
+    font-size: 15px;
+    
+}
