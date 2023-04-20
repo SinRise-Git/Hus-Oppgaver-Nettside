@@ -7,11 +7,11 @@
     <title>Login</title>
     <link rel="stylesheet" href="/css/login-page.css">
     <link rel="icon" type="image/png" href="/images/enter.png">
-    <script src="/javascript/login-page-change.js"></script>
+    <script src="/javascript/form-change.js"></script>
 </head>
 <body>
     <section>
-        <div class="form-box">
+        <div class="form-box" id="form-box">
           <div class="form-value"> 
             <form id="login-form">
                 <h2>Login</h2>
@@ -25,9 +25,10 @@
                     <input type="password" id="password-login" required>
                     <label for="">Passord</label>
                 </div>
-                <button>Log in</button>
+                <button type="button" id="loginData">Log in</button>
                 <div class="registrer">
                     <p>Har du ikke en bruker <a href="#" onclick="showSignupForm()">Registrer</a> </p>
+                    <p class="error" id="error-message-login"></p> 
                 </div>
             </form>
         
@@ -67,5 +68,5 @@
     </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="/javascript/firebase-signup.js"></script>
+    <script type="module" src="/javascript/firebase-signup-login.js"></script>
 </html>

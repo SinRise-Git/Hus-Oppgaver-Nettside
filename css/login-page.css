@@ -19,7 +19,7 @@ section{
 .form-box{
     position: relative;
     width: 400px;
-    height: 500px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,8 +139,7 @@ button{
     text-align: center;
     color: red;
     font-size: 11px;
-    word-wrap: break-word;
-    display: block;
+
 }
 
 input:-webkit-autofill,
@@ -159,3 +158,10 @@ input:-webkit-autofill:active {
     font-size: 15px;
     
 }
+
+.error {
+    height: 20px; 
+    overflow: hidden; 
+    padding-top: 5px;
+  }
+
