@@ -26,7 +26,6 @@ submitData.addEventListener('click', async (e) => {
             
             set(ref(database, 'users/' + user.uid), {
                 email: email,
-                password: password,
                 username: username,
                 rank: rank,
                 point: "0",
@@ -74,6 +73,9 @@ loginData.addEventListener('click', async (e) => {
      .then((userCredential) => {
      // Signed in 
        const user = userCredential.user;
+       localStorage.setItem('isLoggedIn', true);
+       localStorage.setItem('uid', user.uid);
+       window.location.href = 'index.html';
        
   })
      .catch((error) => {
