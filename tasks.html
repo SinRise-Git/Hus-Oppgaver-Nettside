@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="/Hus-Oppgaver-Nettside/javascript/check-login.js"></script>
+<script type="module" src="/Hus-Oppgaver-Nettside/javascript/display-name-rank.js"></script>
+<script type="module" src="/Hus-Oppgaver-Nettside/javascript/task.js"></script>
+<link rel="stylesheet" href="css/index.css">
+<script src="/Hus-Oppgaver-Nettside/javascript/tasks-change.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+      <a href="">Tasks</a>
+      <a href="">Leaderboard</a>
+      <a href="">Achievement</a>
+      <a href="">Shop</a>
+      <div class="login">
+        <a href="">User</a>
+        <a href="" id="logoutbutton">Logout</a>
+      </div>
+    </div>
+    <h1>Tasks</h1>
+    <div class="task-section">
+        <button id="add-task" class="task-value-btn">Add Task</button>
+        <div class="task-values">
+          <button id="all-tasks" class="task-value-btn">All Tasks</button>
+          <button id="waiting-conformation" class="task-value-btn">Waiting conformation</button>
+          <button id="finshed-tasks" class="task-value-btn">Finshed tasks</button>
+        </div>
+      </div>
+      <div class="add-tasks" style="display: none;">
+         <p>Add task</p>
+         <form id="submit-task-form">
+            <label for="task-name">Task Name:</label>
+            <input type="text" id="task-name" required />
+      
+            <label for="task-description">Task Description:</label>
+            <input type="text" id="task-description" required />
+      
+            <label for="task-points">Task Points:</label>
+            <input type="number" id="task-points" required/>
+      
+            <button type="submit">Submit</button>
+          </form>
+       </div>
+      <div class="all-tasks" style="display: block;">
+          <p>All Tasks</p>
+          <ul id="task-list"></ul>
+      </div>
+      <div class="confirmation" style="display: none;">
+          <p>Waiting Confirmation</p>
+          <ul id="awating-list"></ul>
+      </div>
+      <div class="finished" style="display: none;">
+          <p>Finished Tasks</p>
+      </div>
+</body>
+</html>
