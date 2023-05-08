@@ -16,20 +16,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const tasksCollection = collection(db, "tasks");
+const awaitingCollection = collection(db, "awaiting");
 
 // get references to HTML elements
 const taskNameInput = document.getElementById("task-name");
 const taskDescriptionInput = document.getElementById("task-description");
 const taskPointsInput = document.getElementById("task-points");
 const taskList = document.getElementById("task-list");
-const List = document.getElementById("task-list");
 const submitTaskForm = document.getElementById("submit-task-form");
+const awaitingList = document.getElementById("awaiting-list");
+
 
 submitTaskForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const taskName = taskNameInput.value;
   const taskDescription = taskDescriptionInput.value;
   const taskPoints = parseInt(taskPointsInput.value);
+  const usernameLocal = (localStorage.getItem("username"))
 
   try {
     // add task to the Firestore collection
@@ -38,7 +41,7 @@ submitTaskForm.addEventListener("submit", async (e) => {
       taskDescription,
       taskPoints,
       dateCreated: new Date(),
-      createdBy: "Brage"
+      createdBy: usernameLocal
     });
     console.log("Document written with ID: ", docRef.id);
     
@@ -60,7 +63,7 @@ onSnapshot(tasksCollection, (snapshot) => {
       const taskItem = document.createElement("li");
       const deleteButton = document.createElement("button"); // create delete button element
       const awaitconfirmButton = document.createElement("button"); // create delete button element
-      awaitconfirmButton.textContent = "Done with task"; 7
+      awaitconfirmButton.textContent = "Done with task"; 
       deleteButton.textContent = "Delete"; // set text content of the button
       deleteButton.setAttribute("class", `deleteButton`); // add class to the delete button
       awaitconfirmButton.setAttribute("class", `awaitconfirm`); // add class to the awaitconfirm button
@@ -93,6 +96,37 @@ onSnapshot(tasksCollection, (snapshot) => {
       taskItem.appendChild(awaitconfirmButton);
       taskItem.appendChild(deleteButton); // append the delete button to the task item element
       taskList.appendChild(taskItem);
+    }
+  });
+});
+
+onSnapshot(awaitingCollection, (snapshot) => {
+  snapshot.docChanges().forEach((change) => {
+    if (change.type === "added") {
+      const awaiting = change.doc.data();
+      const awaitingItem = document.createElement("li");
+      const confirmButton = document.createElement("button");
+      const finishedButton = document.createElement("button");
+      const deleteButton = document.createElement("button");
+      confirmButton.textContent = "Confirm Task";
+      finishedButton.textContent = "Task not finished"
+      deleteButton.textContent = "Delete";
+      confirmButton.setAttribute("class", "confirmButton");
+      finishedButton.setAttribute("class", "finishedButton");
+      deleteButton.setAttribute("class", "deleteButton");
+      deleteButton.addEventListener("click", async (e) => {
+        try {
+          await deleteDoc(doc(db, "awaiting", change.doc.id));
+          awaitingList.removeChild(awaitingItem);
+        } catch (e) {
+          console.error("Error deleting document: ", e);
+        }
+      });
+      awaitingItem.textContent = `${awaiting.taskName} - ${awaiting.taskDescription} - ${awaiting.taskPoints} points - Created by ${awaiting.createdBy} - ID: ${change.doc.id}`;
+      awaitingItem.appendChild(confirmButton);
+      awaitingItem.appendChild(finishedButton);
+      awaitingItem.appendChild(deleteButton);
+      awaitingList.appendChild(awaitingItem);
     }
   });
 });

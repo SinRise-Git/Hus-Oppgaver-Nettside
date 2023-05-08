@@ -2,9 +2,9 @@ import { app } from "/Hus-Oppgaver-Nettside/javascript/firebaseconfig.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
 
+
 const auth = getAuth(app);
 const database = getDatabase(app);
-
 
 //sign up form
 submitData.addEventListener('click', async (e) => {
@@ -31,7 +31,7 @@ submitData.addEventListener('click', async (e) => {
                 rank: rank,
                 point: "0",
                 ip: ip,
-                
+                tasksDone: "0"
             })
                 .then(() => {
                    document.getElementById("login-form").style.display = "block";
