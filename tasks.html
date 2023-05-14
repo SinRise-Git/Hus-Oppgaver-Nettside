@@ -13,16 +13,16 @@
 </head>
 <body>
     <div class="navbar">
-      <a href="">Tasks</a>
+      <a href="/Hus-Oppgaver-Nettside/tasks.html">Tasks</a>
       <a href="">Leaderboard</a>
       <a href="">Achievement</a>
       <a href="">Shop</a>
       <div class="login">
-        <a href="">User</a>
+        <a href="/Hus-Oppgaver-Nettside/user.html">User</a>
         <a href="" id="logoutbutton">Logout</a>
       </div>
     </div>
-    <h1>Tasks</h1>
+   
     <div class="task-section">
         <button id="add-task" class="task-value-btn">Add Task</button>
         <div class="task-values">
@@ -32,21 +32,20 @@
         </div>
       </div>
       <div class="add-tasks" style="display: none;">
-         <p>Add task</p>
-         <form id="submit-task-form">
-            <label for="task-name">Task Name:</label>
-            <input type="text" id="task-name" required />
+        <form id="submit-task-form">
+          <p>Add task</p>
+          <label for="task-name"><i class="fas fa-tasks"></i> Task Name:</label>
+          <input type="text" id="task-name" required />
       
-            <label for="task-description">Task Description:</label>
-            <input type="text" id="task-description" required/>
-
+          <label for="task-description"><i class="fas fa-info-circle"></i> Task Description:</label>
+          <input type="text" id="task-description" required/>
       
-            <label for="task-points">Task Points:</label>
-            <input type="number" id="task-points" required/>
+          <label for="task-points"><i class="fas fa-star"></i> Task Points:</label>
+          <input type="number" id="task-points" required/>
       
-            <button type="submit">Submit</button>
-          </form>
-       </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
       <div class="all-tasks" style="display: block;">
           <p>All Tasks</p>
           <ul id="task-list"></ul>
@@ -57,6 +56,8 @@
       </div>
       <div class="finished" style="display: none;">
           <p>Finished Tasks</p>
+          <ul id="completed-list"></ul>
       </div>
+      <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 </body>
 </html>

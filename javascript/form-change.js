@@ -1,6 +1,4 @@
 function showLoginForm(){
-    const linkElement = document.querySelector('link[rel="icon"]');
-    linkElement.href = 'Hus-Oppgaver-Nettside/images/enter.png';
     document.getElementById("login-form").style.display = "block";
     document.getElementById("signup-form").style.display = "none";
     document.title = "Login";
@@ -8,8 +6,6 @@ function showLoginForm(){
 }
 
 function showSignupForm(){
-    const linkElement = document.querySelector('link[rel="icon"]');
-    linkElement.href = 'Hus-Oppgaver-Nettside/images/add-user.png';
     document.getElementById("login-form").style.display = "none";
     document.getElementById("signup-form").style.display = "block";
     document.title = "Signup";

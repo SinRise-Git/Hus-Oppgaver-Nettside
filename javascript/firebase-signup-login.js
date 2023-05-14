@@ -29,16 +29,14 @@ submitData.addEventListener('click', async (e) => {
                 email: email,
                 username: username,
                 rank: rank,
-                point: "0",
+                point: 0,
                 ip: ip,
-                tasksDone: "0"
+                tasksDone: 0
             })
                 .then(() => {
                    document.getElementById("login-form").style.display = "block";
                    document.getElementById("signup-form").style.display = "none";
                    document.title = "Login";
-                   const linkElement = document.querySelector('link[rel="icon"]');
-                   linkElement.href = '/images/enter.png';
                 })
                 .catch((error) => {
                     const errorMessage = error.message;

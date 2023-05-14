@@ -1,6 +1,8 @@
 h1{
   text-align: center;
+  font-size: 30px;
   color: white;
+  font-size: bold;
 }
 
 body{
@@ -28,7 +30,15 @@ body{
   border-radius: 10px;
   margin-right: 20px;
 }
-  
+
+.add-tasks{
+  margin-top: 150px;
+}
+
+.add-tasks label i {
+  margin-right: 2px;
+}
+
 .task-values {
   display: flex;
 }
@@ -48,8 +58,12 @@ body{
 
 .task-value-btn:hover {
   cursor: pointer;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 1);
 }
 
+.task-value-btn:active {
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+}
   
 
 .navbar {     
@@ -91,7 +105,7 @@ body{
   margin-left: 10px;
 }
 
-.confirmButton, .finishedButton, .awaitconfirm{
+.confirmButton, .finishedButton, .awaitconfirm {
   background-color: black;
   color: white;
   border: none;
@@ -100,10 +114,23 @@ body{
   margin-left: 10px;
 }
 
-li{
+
+.notButton{
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+li {
   list-style: none;
-  margin-bottom: 10px;
+  padding: 10px;
   text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  
 }
 
 p {
@@ -111,6 +138,7 @@ p {
   font-size: 30px;
   color: white;
   font-size: bold;
+  margin: 0;
 }
 
 #submit-task-form {
@@ -118,7 +146,7 @@ p {
   backdrop-filter: blur(15px);
   padding: 20px;
   border-radius: 5px;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   border: 2px solid white;
 }
@@ -139,6 +167,7 @@ input[type="number"] {
   border-radius: 5px;
   border: 2px solid white;
   background-color: transparent;
+  backdrop-filter: blur(15px);
   color: white;
 }
 
@@ -159,6 +188,15 @@ button[type="submit"] {
   cursor: pointer;
 }
 
+button[type="submit"]:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+}
+
+button[type="submit"]:active {
+  background-color: #3e8e41;
+  box-shadow: none;
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
@@ -170,4 +208,45 @@ input:-webkit-autofill:active {
     background-color: transparent !important;
     
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 93vh;
+}
 
+.user-info {
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  color: whitesmoke;
+  line-height: 1.5;
+}
+
+.user-info span {
+  font-weight: 1;
+  color: white;
+}
+
+.user-info i {
+  margin-right: 10px;
+  font-size: 24px;
+  color: white;
+}
+.user-info h1{
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+}
