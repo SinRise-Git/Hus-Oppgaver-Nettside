@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Hus-Oppgaver-Nettside/javascript/check-login.js"></script>
+    <script type="module" src="/Hus-Oppgaver-Nettside/javascript/leaderboard.js"></script>
+    <script type="module" src="/Hus-Oppgaver-Nettside/javascript/display-name-rank.js"></script>
+    <link rel="stylesheet" href="/Hus-Oppgaver-Nettside/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/Hus-Oppgaver-Nettside/tasks.html">Tasks</a>
+        <a href="/Hus-Oppgaver-Nettside/leaderboard.html">Leaderboard</a>
+        <a href="">Achievement</a>
+        <a href="">Shop</a>
+        <div class="login">
+          <a href="/Hus-Oppgaver-Nettside/user.html">User</a>
+          <a href="" id="logoutbutton">Logout</a>
+        </div>
+      </div>			
+      <!-- HTML structure for the leaderboard table -->
+     <div class="leaderboard-container">
+      <div class="leaderboard-points">
+        <h1>Points Leaderboard</h1>
+        <div class="buttons">
+          <button id="point-leaderboard-btn" class="active">Points</button>
+          <button id="tasksdone-leaderboard-btn">Tasks Completed</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Player Name</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="points-leaderboard-table-body">
+          </tbody>
+        </table>
+      </div>
+      <div class="leaderboard-tasksdone" style="display: none;">
+        <h1>Task Completed Leaderboard</h1>
+        <div class="buttons">
+          <button id="point-leaderboard-btn-new">Points</button>
+          <button id="tasksdone-leaderboard-btn-new" class="active">Tasks Completed</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Player Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="tasksdone-leaderboard-table-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+</body>
+</html>

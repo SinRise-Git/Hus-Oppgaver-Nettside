@@ -71,7 +71,6 @@ body{
   background: transparent;
   border: solid 2px white;
   backdrop-filter: blur(15px);
-
 }        
  
 .navbar a {     
@@ -92,9 +91,8 @@ body{
   color: rgb(0, 0, 0);   
 } 
 .navbar .active {     
-  background-color: rgb(82, 82, 82);   }
-  
-  
+  background-color: rgb(82, 82, 82);   
+}
   
 .deleteButton{
   background-color: red;
@@ -206,8 +204,8 @@ input:-webkit-autofill:active {
     -webkit-text-fill-color: white;
     transition: background-color 5000s ease-in-out 0s;
     background-color: transparent !important;
-    
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -237,6 +235,7 @@ input:-webkit-autofill:active {
 .user-info span {
   font-weight: 1;
   color: white;
+  text-align: center;
 }
 
 .user-info i {
@@ -250,3 +249,88 @@ input:-webkit-autofill:active {
   font-weight: 700;
   color: white;
 }
+
+.leaderboard-points, .leaderboard-tasksdone {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+  border: solid 2px white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+h1 {
+  color: whitesmoke;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+td, th {
+  padding: 10px;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 20px;
+}
+
+th {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tbody td:first-child {
+  width: 20%;
+}
+
+tbody td:nth-child(2) {
+  width: 60%;
+}
+
+tbody td:nth-child(3) {
+  width: 20%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.leaderboard-container button {
+  padding: 7px 15px;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.leaderboard-container button.active {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+  
+}
+
+.leaderboard-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.leaderboard-container button:active {
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+}
+
+
